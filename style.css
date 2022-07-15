@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif; 
+*/
+
+
+
+body{
+    width: 100%;
+    padding: 5vh 10vw;
+    box-sizing: border-box;
+}
+h1{
+    font-family: 'Playfair Display', serif; 
+    margin: 3rem 0 1rem;
+}
+.siteDesc{
+    display: flex;
+    gap: 0.5rem;
+    width: 60%;
+    align-items: flex-start;
+}
+
+.siteDesc p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+.mainImg{
+    width: 100%;
+    margin: 2rem 0;
+}
+
+h2{
+    color: #333;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+
+.cbx {
+    position: relative;
+    top: 1px;
+    min-width: 20px;
+    height: 20px;
+    border: 1px solid #c8ccd4;
+    border-radius: 3px;
+    /* vertical-align: middle; */
+    transition: background 0.1s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+p{
+    display: inline;
+    color: #333;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 4px;
+}
+
+.ingredient{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+   .cbx:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 6px;
+    width: 6px;
+    height: 12px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transition: all 0.3s ease;
+    transition-delay: 0.15s;
+}
+   
+   .lbl {
+    margin-left: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+   
+   .hidden-xs-up:checked ~ .cbx {
+    border-color: transparent;
+    background: #F2994A;
+    animation: jelly 0.6s ease;
+}
+   
+   .hidden-xs-up:checked ~ .cbx:after {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+}
+   
+   .cntr {
+    position: relative;
+
+}
+
+   
+@keyframes jelly {
+    from {
+     transform: scale(1, 1);
+    }
+   
+    30% {
+     transform: scale(1.25, 0.75);
+    }
+   
+    40% {
+     transform: scale(0.75, 1.25);
+    }
+   
+    50% {
+     transform: scale(1.15, 0.85);
+    }
+   
+    65% {
+     transform: scale(0.95, 1.05);
+    }
+   
+    75% {
+     transform: scale(1.05, 0.95);
+    }
+   
+    to {
+     transform: scale(1, 1);
+    }
+}
+   
+.hidden-xs-up {
+    display: none!important;
+}
+.cheesecake{
+    margin-top: 3rem;
+}
+
+ol{
+    counter-reset: counter;
+    list-style: none;
+}
+ol li{
+    counter-increment: counter;
+    position: relative;
+    padding-left: 2rem;
+    padding-top: 3px;
+    margin-top: 1rem;
+}
+ol li::before{
+    content: counter(counter);
+    color: #fff;
+    background-color: #F2994A;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    left: 0;
+    top: 1rem;
+    transform: translateY(-50%);
+
+}
+
+ .default{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+ .default span{
+    display: block;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.default p{
+    text-transform: uppercase;
+    color: #BDBDBD;
+}
+.orange span{
+    color: #F2994A;
+}
+.default i{
+    color: #333;
+}
+.orange i{
+    color: #F2994A;
+}
+.recipetime{
+    padding: 2rem;
+    border: 1px solid #bdbdbd;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height: 250px;
+}
+.Container{
+    width: 70%;
+}
+.bodyContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        padding: 0 5vw 5vh;
+    }
+    .recipetime{
+        width: 100%;
+        box-sizing: border-box;
+        height: 300px;
+    }
+    .siteDesc{
+        width: 100%;
+    }
+    .bodyContainer{
+        flex-direction: column-reverse;
+    }
+    .Container{
+        width: 100%;
+    }
+}
